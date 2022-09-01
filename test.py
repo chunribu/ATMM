@@ -1,10 +1,7 @@
-# ATMM
-Animation Time Manager for Manim
-
-## Usage
-```python
 from manim import *
 import atmm
+
+print(atmm.func_list)
 
 class Demo(Scene):
     def construct(self):
@@ -33,5 +30,3 @@ class Demo(Scene):
             )
         )
         self.wait()
-```
-
