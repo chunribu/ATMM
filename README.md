@@ -2,6 +2,9 @@
 Animation Time Manager for Manim
 
 ## Usage
+
+https://user-images.githubusercontent.com/57521167/187965141-a40d4239-1ad4-406b-945f-ca34f8d8979f.mp4
+
 ```python
 from manim import *
 import atmm
