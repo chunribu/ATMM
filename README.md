@@ -1,6 +1,14 @@
 # ATMM
 Animation Time Manager for Manim
 
+## Installation
+
+From [PyPI](https://pypi.org/project/atmm/)
+
+```
+pip install atmm
+```
+
 ## Usage
 
 https://user-images.githubusercontent.com/57521167/187965141-a40d4239-1ad4-406b-945f-ca34f8d8979f.mp4
