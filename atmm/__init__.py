@@ -1,3 +1,9 @@
+#############################################################
+__version__ = '0.0.2'
+__author__ = 'Jian Jiang'
+__email__ = 'jianjiang.bio@gmail.com'
+#############################################################
+
 from manim import rate_functions
 
 func_list = rate_functions.__dict__.keys()
@@ -15,4 +21,7 @@ def time_manager(start=0, stop=None, total_time=1, func='ease_in_sine'):
         else:
             _t = (t - relative_start) / relative_duration
             return rate_functions.__dict__[func](_t)
-    return rate_func
+    return {
+        'run_time': total_time,
+        'rate_func': rate_func
+    }

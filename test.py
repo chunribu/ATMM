@@ -3,11 +3,17 @@ import atmm
 
 print(atmm.func_list)
 
+T = atmm.time_manager
+
 class Demo(Scene):
     def construct(self):
         background = FullScreenRectangle()\
             .set_opacity(1)\
             .set_color([RED,WHITE,BLUE])
+        
+        line = Line(LEFT*7, RIGHT*7)\
+            .set_color(BLACK)\
+            .shift(DOWN)
 
         circle = Circle()\
             .shift(LEFT)
@@ -17,16 +23,14 @@ class Demo(Scene):
             .next_to(circle, RIGHT)
 
         self.play(
-            background.animate(run_time=5).set_color([GRAY,GREEN,TEAL]),
+            background.animate(run_time=6, rate_func=rate_functions.linear)\
+                .set_color([WHITE,TEAL,MAROON]),
 
-            circle.animate(run_time=5, rate_func=atmm.time_manager(
-                start=1, stop=2, total_time=5, func='linear'
-                )).set_fill(TEAL, opacity=1),
+            GrowFromEdge(line, LEFT, **T(total_time=6, func='linear')),
 
-            Write(square, run_time=5, 
-                rate_func=atmm.time_manager(
-                    start=4, stop=5, total_time=5
-                )
-            )
+            circle.animate(**T(start=1, stop=2, total_time=6))\
+                .set_fill(TEAL, opacity=1),
+
+            Write(square, **T(start=3, stop=4, total_time=6))
         )
         self.wait()

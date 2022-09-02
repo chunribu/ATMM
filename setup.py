@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setup(
     name='atmm',
-    version='0.0.1',
+    version='0.0.2',
     description='Animation Time Manager for Manim',
     url='https://github.com/chunribu/atmm',
     author='Jian Jiang',
